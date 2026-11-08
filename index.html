@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Caixa Fácil — Controlo de Vendas e Lucro</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="hd">
+<div class="w nv"><a class="lg" href="#inicio">💰 Caixa Fácil</a>
+<nav><a href="#sobre">Sobre</a><a href="#func">Funções</a><a href="#acesso" id="nvAcesso">Entrar</a></nav></div>
+</header>
+
+<main>
+<section class="hero" id="inicio"><div class="w">
+<h1>Saiba quanto lucra o seu negócio, todos os dias.</h1>
+<p>O Caixa Fácil ajuda pequenos comerciantes e agricultores a registar vendas e despesas e a ver o lucro em meticais (MT), sem folhas de papel nem calculadora.</p>
+<a class="bt" href="#acesso">Começar agora</a>
+</div></section>
+
+<section class="w sec" id="sobre">
+<h2>Sobre o projeto</h2>
+<p>Muitos negócios pequenos em Moçambique não sabem ao certo se estão a ganhar ou a perder. Este projeto resolve isso com uma aplicação simples: regista-se cada venda e cada despesa e o sistema calcula o resto.</p>
+<p>Foi desenvolvido com HTML, CSS e JavaScript puro, no âmbito do módulo Desenvolver Aplicações Web em JavaScript do Instituto Médio Politécnico de Maputo.</p>
+</section>
+
+<section class="w sec" id="func">
+<h2>Funcionalidades</h2>
+<div class="gr">
+<div class="cd"><h3>📈 Lucro automático</h3><p>Totais de vendas, despesas e lucro atualizados a cada registo.</p></div>
+<div class="cd"><h3>🧾 Despesas por categoria</h3><p>Veja onde o dinheiro está a sair: transporte, salários, matéria-prima e mais.</p></div>
+<div class="cd"><h3>🔎 Pesquisa e filtros</h3><p>Encontre qualquer registo por texto ou filtre só vendas ou só despesas.</p></div>
+<div class="cd"><h3>💾 Dados guardados</h3><p>Os registos ficam guardados no navegador, mesmo depois de fechar a página.</p></div>
+</div>
+</section>
+
+<section class="w sec" id="acesso">
+<div id="login" class="cd lgn">
+<h2>Entrar na aplicação</h2>
+<p class="mu">Identifique-se para abrir o painel de controlo.</p>
+<form id="fl" novalidate>
+<label>Nome<input id="nm" placeholder="O seu nome completo" maxlength="60"></label>
+<label>Email<input id="em" type="email" placeholder="exemplo@email.com" maxlength="80"></label>
+<label>Mensagem<textarea id="ms" rows="3" placeholder="Para que vai usar o Caixa Fácil?" maxlength="200"></textarea></label>
+<p class="er" id="er" role="alert"></p>
+<button class="bt" type="submit">Entrar</button>
+</form>
+</div>
+
+<div id="app" hidden>
+<div class="tp"><div><h2 id="ola">Olá!</h2><p class="mu" id="eu"></p></div><button class="bt s" id="sai" type="button">Sair</button></div>
+
+<div class="rs">
+<div class="cd"><small>Vendas</small><b class="v" id="tv"></b></div>
+<div class="cd"><small>Despesas</small><b class="d" id="td"></b></div>
+<div class="cd"><small>Lucro</small><b id="tl"></b></div>
+</div>
+
+<div class="cd"><h3>Novo registo</h3>
+<form id="fr" class="fg">
+<input class="f" id="ds" placeholder="Descrição (ex.: venda de sementes)" maxlength="60" required>
+<select id="tp"><option value="venda">Venda</option><option value="despesa">Despesa</option></select>
+<select id="ct"><option>Vendas</option><option>Matéria-prima</option><option>Transporte</option><option>Salários</option><option>Outros</option></select>
+<input id="vl" type="number" min="1" step="any" placeholder="Valor (MT)" required>
+<button class="bt" type="submit">Adicionar</button>
+</form></div>
+
+<div class="cd"><h3>Despesas por categoria</h3><div id="cats"></div></div>
+
+<div class="cd"><h3>Registos</h3>
+<div class="fb"><input id="q" placeholder="Pesquisar..."><select id="ft"><option value="todos">Todos</option><option value="venda">Vendas</option><option value="despesa">Despesas</option></select></div>
+<ul id="ls"></ul>
+<button class="bt s" id="rp" type="button">Repor exemplos</button>
+</div>
+</div>
+</section>
+</main>
+
+<footer>Desenvolvido por Iandro Watchley Amos<br>Instituto Médio Politécnico de Maputo · PAW 2026</footer>
+<script src="js/app.js"></script>
+</body>
+</html>
